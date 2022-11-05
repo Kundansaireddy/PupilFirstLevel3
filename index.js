@@ -4,10 +4,10 @@ const todoList = () => {
       all.push(todoItem)
       //console.log(all);
     }
-    const donenow = (index) => {
+    const markAsComplete = (index) => {
       all[index].completed = true
     }
-    const OverDue = () => {
+    const overdue = () => {
         ar=[]
       for(let i=0;i<all.length;i++)
       {
@@ -19,7 +19,7 @@ const todoList = () => {
       return ar;
     }
   
-    const duenow = () => {
+    const dueToday = () => {
         ar=[]
         for(let i=0;i<all.length;i++)
         {
@@ -32,7 +32,7 @@ const todoList = () => {
         return ar;
     }
   
-    const dueafter = () => {
+    const dueLater = () => {
         ar=[]
         for(let i=0;i<all.length;i++)
         {
@@ -52,7 +52,7 @@ const todoList = () => {
       }
     }
   
-    return { all, add, donenow, OverDue, duenow, dueafter, toDisplayableList };
+    return { all, add, markAsComplete, overdue, dueToday, dueLater, toDisplayableList };
   }
   
   // ####################################### #
@@ -82,20 +82,20 @@ const todoList = () => {
   
   console.log("My Todo-list\n\n")
   
-  console.log("OverDue")
-  var OverDues = todos.OverDue()
-  var formattedOverDues = todos.toDisplayableList(OverDues)
-  console.log(formattedOverDues)
+  console.log("Overdue")
+  var overdues = todos.overdue()
+  var formattedOverdues = todos.toDisplayableList(overdues)
+  console.log(formattedOverdues)
   console.log("\n\n")
   
   console.log("Due Today")
-  let itemsduenow = todos.duenow()
-  let formattedItemsduenow = todos.toDisplayableList(itemsduenow)
-  console.log(formattedItemsduenow)
+  let itemsDueToday = todos.dueToday()
+  let formattedItemsDueToday = todos.toDisplayableList(itemsDueToday)
+  console.log(formattedItemsDueToday)
   console.log("\n\n")
   
   console.log("Due Later")
-  let itemsdueafter = todos.dueafter()
-  let formattedItemsdueafter = todos.toDisplayableList(itemsdueafter)
-  console.log(formattedItemsdueafter)
+  let itemsDueLater = todos.dueLater()
+  let formattedItemsDueLater = todos.toDisplayableList(itemsDueLater)
+  console.log(formattedItemsDueLater)
   console.log("\n\n")
